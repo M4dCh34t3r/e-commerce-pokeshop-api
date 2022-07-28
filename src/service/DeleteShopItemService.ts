@@ -2,18 +2,18 @@ import { ShopItemRepository } from "../repository/ShopItemRepository";
 import { getCustomRepository } from "typeorm";
 
 interface ShopItemProps {
-  shopItemId: number;
+  id: number;
 }
 
 export class DeleteShopItemService {
-  async execute({ shopItemId }: ShopItemProps) {
+  async execute({ id }: ShopItemProps) {
     const shopItemRepository = getCustomRepository(ShopItemRepository);
 
-    if (!shopItemId) {
-        throw new Error("Please, insert an item id...");
+    if (!id) {
+        throw new Error("Please, insert the internal item id...");
     }
 
-    const deletedShopItem = await shopItemRepository.delete({ shopItemId });
+    const deletedShopItem = await shopItemRepository.delete({ id });
     return deletedShopItem;
   }
 }

@@ -3,9 +3,9 @@ import { Request, Response } from "express";
 
 export class DeleteShopItemController {
   async handle(request: Request, response: Response){
-    const { shopItemId } = request.body;
+    const { id } = request.body;
     const deleteShopItemService = new DeleteShopItemService();
-    const deletedShopItem = await deleteShopItemService.execute({ shopItemId });
+    const deletedShopItem = await deleteShopItemService.execute({ id });
     return response.json(deletedShopItem);
   }
 }
