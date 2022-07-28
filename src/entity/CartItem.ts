@@ -1,7 +1,7 @@
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
-@Entity('ShopItem')
-export class ShopItem {
+@Entity('CartItem')
+export class CartItem {
 
   @PrimaryGeneratedColumn()
   readonly id: number;

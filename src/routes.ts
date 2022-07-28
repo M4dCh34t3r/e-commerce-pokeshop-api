@@ -1,27 +1,27 @@
-import { CreateShopItemController } from "./controller/CreateShopItemController";
-import { DeleteShopItemController } from "./controller/DeleteShopItemController";
+import { CreateCartItemController } from "./controller/CreateCartItemController";
+import { DeleteCartItemController } from "./controller/DeleteCartItemController";
 import { CreateReviewController } from "./controller/CreateReviewController";
-import { ListShopItemController } from "./controller/ListShopitemController";
+import { ListCartItemController } from "./controller/ListCartItemController";
 import { ListReviewController } from "./controller/ListReviewController";
 import { Router, Request, Response } from "express";
 
 export const router = Router();
 
 const createReviewController = new CreateReviewController();
-const createShopItemController = new CreateShopItemController();
+const createCartItemController = new CreateCartItemController();
 
-const deleteShopItemController = new DeleteShopItemController();
+const deleteCartItemController = new DeleteCartItemController();
 
 const listReviewController = new ListReviewController();
-const listShopItemController = new ListShopItemController();
+const listCartItemController = new ListCartItemController();
 
-router.delete('/shop-items', deleteShopItemController.handle);
+router.delete('/cart-items', deleteCartItemController.handle);
 
 router.post('/reviews', createReviewController.handle);
-router.post('/shop-items', createShopItemController.handle);
+router.post('/cart-items', createCartItemController.handle);
 
 router.get('/reviews', listReviewController.handle);
-router.get('/shop-items', listShopItemController.handle);
+router.get('/cart-items', listCartItemController.handle);
 
 router.get('/', (request: Request, response: Response) => {
     return response.json({ message: "The PokeShop API is runninng!" });
