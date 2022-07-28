@@ -7,6 +7,6 @@ export class ShopItem {
   readonly id: number;
 
   @Column()
-  shoItemId: number;
+  shopItemId: number;
 
 }
