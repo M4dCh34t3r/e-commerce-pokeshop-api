@@ -1,9 +1,12 @@
-import { Column, Entity } from 'typeorm';
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity('ShopItem')
 export class ShopItem {
 
-    @Column()
-    shoItemId: number;
+  @PrimaryGeneratedColumn()
+  readonly id: number;
 
-  }
+  @Column()
+  shoItemId: number;
+
+}
