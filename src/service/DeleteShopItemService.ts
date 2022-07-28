@@ -5,16 +5,15 @@ interface ShopItemProps {
   shopItemId: number;
 }
 
-export class CreateShopItemService {
+export class DeleteShopItemService {
   async execute({ shopItemId }: ShopItemProps) {
     const shopItemRepository = getCustomRepository(ShopItemRepository);
 
     if (!shopItemId) {
-        console.log("Please, insert an item id...");
+        throw new Error("Please, insert an item id...");
     }
 
-    const createdShopItem = shopItemRepository.create({ shopItemId });
-    await shopItemRepository.save(createdShopItem);
-    return createdShopItem;
+    const deletedShopItem = await shopItemRepository.delete({ shopItemId });
+    return deletedShopItem;
   }
 }
