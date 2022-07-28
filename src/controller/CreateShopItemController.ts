@@ -1,7 +1,7 @@
 import { CreateShopItemService } from "../service/CreateShopItemService";
 import { Request, Response } from "express";
 
-class CreateReviewController {
+class CreateShopItemController {
   async handle(request: Request, response: Response){
     const { shopItemId } = request.body;
     const createShopItemService = new CreateShopItemService();
@@ -10,4 +10,4 @@ class CreateReviewController {
   }
 }
 
-export { CreateReviewController }
+export { CreateShopItemController }
