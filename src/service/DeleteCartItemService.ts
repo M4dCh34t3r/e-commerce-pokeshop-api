@@ -5,7 +5,7 @@ interface CartItemProps {
   id: number;
 }
 
-export class DeleteCartItemService {
+class DeleteCartItemService {
   async execute({ id }: CartItemProps) {
     const shopItemRepository = getCustomRepository(CartItemRepository);
 
@@ -17,3 +17,5 @@ export class DeleteCartItemService {
     return deletedCartItem;
   }
 }
+
+export { DeleteCartItemService }

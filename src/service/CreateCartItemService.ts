@@ -5,7 +5,7 @@ interface CartItemProps {
   shopItemId: number;
 }
 
-export class CreateCartItemService {
+class CreateCartItemService {
   async execute({ shopItemId }: CartItemProps) {
     const shopItemRepository = getCustomRepository(CartItemRepository);
 
@@ -18,3 +18,5 @@ export class CreateCartItemService {
     return createdCartItem;
   }
 }
+
+export { CreateCartItemService }

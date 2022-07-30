@@ -6,7 +6,7 @@ interface ReviewProps {
   message: string;
 }
 
-export class CreateReviewService {
+class CreateReviewService {
   async execute({ author, message }: ReviewProps) {
     const reviewRepository = getCustomRepository(ReviewRepository);
 
@@ -23,3 +23,5 @@ export class CreateReviewService {
     return createdReview;
   }
 }
+
+export { CreateReviewService }
