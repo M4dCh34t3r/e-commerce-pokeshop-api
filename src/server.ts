@@ -1,7 +1,7 @@
 import { router } from "./routes";
 import express from "express";
 import "reflect-metadata";
-import cors from "cors"
+import cors from "cors";
 import "./database";
 
 const app = express();
